@@ -11,14 +11,23 @@ WARNING! The C programm doesn’t work currently, the display does not change.
 To set up the E-Paper display project, follow the steps below:
 ### Prerequisites
 
-    Raspberry Pi with an operating system installed (e.g., Raspbian)
-    Python 3.x installed on the Raspberry Pi
-    Waveshare 5.83 inch E-Paper display
-      https://www.waveshare.com/5.83inch-e-Paper.htm
+- Raspberry Pi with an operating system installed (e.g., Raspbian)
+- Waveshare 5.83 inch E-Paper display
+    - https://www.waveshare.com/5.83inch-e-Paper.htm
+- Optional (but recommended):
+    - E-Paper with a HAT to drive it
 
-    Optional (but recommended):
-    E-Paper with a HAT to drive it, found
+### Software
+- Enable SPI Interface on Pi
 
+      sudo raspi-config
+      Choose Interfacing Options -> SPI -> Yes Enable SPI interface
+      sudo reboot
+      You can use ls /dev/spi* to check whether SPI is occupied. If the terminal outputs /dev/spidev0.1 and /dev/spidev0.1, SPI is not occupied.
+- Install BCM2835, see [waveshare manual]( https://www.waveshare.com/wiki/5.83inch_e-Paper_HAT_Manual#C)
+- Python 3.x installed on the Raspberry Pi
+- For Python: Install the function library, see manual above
+- 
 ### Links:
 
   - [E-Paper](https://www.waveshare.com/5.83inch-e-Paper.htm)
@@ -26,17 +35,17 @@ To set up the E-Paper display project, follow the steps below:
 
 ### Hardware Setup
 
-    Connect the Waveshare E-Paper display to the Raspberry Pi following the manufacturer's instructions. https://www.waveshare.com/wiki/5.83inch_e-Paper_HAT_Manual#C
+Connect the Waveshare E-Paper display to the Raspberry Pi following the manufacturer's instructions.
 
 ## Usage
 
 Clone or download the project repository to your Raspberry Pi
 
-    git clone <repository_url>
+    git clone https://github.com/MaestroOnICe/quotes.git
 
 Navigate to the project directory.
 
-    cd <project_directory>
+    cd quotes
 
 Install the required Python packages by navigating to the python directory and installing required dependecies:
 
