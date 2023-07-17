@@ -67,6 +67,23 @@ Option 2: Run the Python script directly.
 
     python showQuotes.py
 
+### Scheduling a Cron Job
+
+To automatically refresh the E-Paper display at 3 AM every night, you can schedule a cron job on your Raspberry Pi. Here's how:
+
+Open the cron table for editing.
+
+    $ crontab -e
+
+Add the following line to the cron table:
+
+
+    0 3 * * * /path/to/python /path/to/showQuotes.py
+
+Save and exit the cron table.
+
+Cron will now execute the showQuotes.py script at 3 AM every day, refreshing the E-Paper display with a new quote.
+
 ## ToDo
 
   - enclosure for the photo frame, 3D printing
