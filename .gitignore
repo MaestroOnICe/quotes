@@ -208,3 +208,4 @@ dkms.conf
 # Ignore bitmaps
 *.bmp
 
+c/epd

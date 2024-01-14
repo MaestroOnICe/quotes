@@ -23,6 +23,9 @@ def main():
     try:
         # get quote, calculate placment and generate bitmap for all days of the year
         for i in range(1, 366):
+            # padd zeros from the right
+            padded_i = str(i).zfill(3)
+
             # get corresponding quote and author from json
             quote, author = get_quote(i)
             
@@ -30,7 +33,7 @@ def main():
             quote_wrapped, quote_font, author_font = calculate_font_size(quote)
     
             # drawing the quote and author to the screen
-            generate_bit_map(i, quote_wrapped, author, quote_font, author_font)
+            generate_bit_map(padded_i, quote_wrapped, author, quote_font, author_font)
 
     except IOError as e:
         logging.info(e)

@@ -2,10 +2,15 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
+
 # /home/justus/quotes/lib
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 if os.path.exists(libdir):
     sys.path.append(libdir)
+
+# 
+dir = os.path.dirname(os.path.realpath(__file__))
+print(dir)
 
 # import the rest of the modules
 import logging
@@ -40,7 +45,7 @@ def main():
 def writeScreen(number_day: int):
     #initiate the drawing of the black frame
     image = Image.new('1', (epd.width, epd.height), 255)
-    image = Image.open(os.path.join("../../bmp/", str(number_day)+".bmp"))
+    image = Image.open(os.path.join("/home/justus/quotes/bmp/", str(number_day)+".bmp"))
 
     #output to the display
     logging.info("drawing to screen")

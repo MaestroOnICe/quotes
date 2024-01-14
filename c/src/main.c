@@ -24,7 +24,7 @@ int main(void)
 
     // drawing bitmap with index i
     int ret = draw_bit_map(1);
-    
+
     // Check the return value for errors
     if (ret == -1) {
         printf("Error occurred during drawing.\n");
@@ -48,7 +48,7 @@ int draw_bit_map(int i) {
     EPD_5in83_V2_Clear();
 	clock_gettime(CLOCK_REALTIME,&finish);
     printf("%ld S\r\n",finish.tv_sec-start.tv_sec);
-	
+
     DEV_Delay_ms(500);
 
     // create a new image cache named IMAGE_BW and fill it with white
