@@ -3,14 +3,10 @@
 import sys
 import os
 
-# /home/justus/quotes/lib
+# libary
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 if os.path.exists(libdir):
     sys.path.append(libdir)
-
-# 
-dir = os.path.dirname(os.path.realpath(__file__))
-print(dir)
 
 # import the rest of the modules
 import logging
@@ -22,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)
 def main():
     try:
         global epd; epd = epd5in83.EPD()           #get the display
-        logging.info("init and clear")         
+        logging.info("init and clear")
         epd.init()                                 #init the display
         epd.Clear()
 
